@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Macro name="My Favorites" category="Navigation" description="Inserts a block with my favorites in a page." publishDate="00-00-00T00:00:00.000Z" version="11">
+  <Comment text="----------------------------------------------------------------------------------" />
+  <Comment text="    Where am I" />
+  <Comment text="----------------------------------------------------------------------------------" />
+  <Expression>$Page = GetCurrentPage()</Expression>
+  <Comment text="Create a new outline" />
+  <Expression>$Outline = InsertObject($Page, "Outline", -1)</Expression>
+  <Expression>$Outline.x = 600</Expression>
+  <Expression>$Outline.y = 20</Expression>
+  <Expression>$Outline.selection = "all"</Expression>
+  <Comment text="Insert a paragraph" />
+  <Expression>$Paragraph = InsertObject($Outline, "Paragraph", -1)</Expression>
+  <Expression>$Paragraph.selection = "all"</Expression>
+  <Comment text="Resources Environment" />
+  <Expression>$Text = InsertObject($Paragraph, "Text", 0)</Expression>
+  <Expression>$Text.value = "Resources Environment"</Expression>
+  <Expression>$LogUrl = "onenote:#section-id={F2A1063F-EBBE-4624-A45F-D16869D64A2D}"</Expression>
+  <Expression>$Text.hyperlink = $LogUrl</Expression>
+  <Expression>InsertObject($Paragraph, "Text", 0).value = " &gt; "</Expression>
+  <Comment text="Resources General" />
+  <Expression>$Text = InsertObject($Paragraph, "Text", 0)</Expression>
+  <Expression>$Text.value = "Resources"</Expression>
+  <Expression>$LogUrl = "onenote:#base-path=https://d.docs.live.net/ebbfa11d0da74e11/Documents/Starbucks/Resources"</Expression>
+  <Expression>$Text.hyperlink = $LogUrl</Expression>
+  <Expression>InsertObject($Paragraph, "Text", 0).value = " &gt; "</Expression>
+  <Comment text="Processes" />
+  <Expression>$Text = InsertObject($Paragraph, "Text", 0)</Expression>
+  <Expression>$Text.value = "Processes"</Expression>
+  <Expression>$LogUrl = "onenote:#section-id={9445B8FF-786F-4CDD-A753-5B01C65301D2}"</Expression>
+  <Expression>$Text.hyperlink = $LogUrl</Expression>
+  <Expression>InsertObject($Paragraph, "Text", 0).value = " &gt; "</Expression>
+  <Comment text="Log" />
+  <Expression>$Text = InsertObject($Paragraph, "Text", 0)</Expression>
+  <Expression>$Text.value = "Log"</Expression>
+  <Expression>$LogUrl = "onenote:#section-id={ADFAAC5B-7BE6-4C00-93FB-75176E29D1FA}&amp;page-id={4D64B12E-8E64-4D3A-8A01-3A6920F1637D}"</Expression>
+  <Expression>$Text.hyperlink = $LogUrl</Expression>
+  <Expression>InsertObject($Paragraph, "Text", 0).value = " &gt; "</Expression>
+  <Expression>$Text = InsertObject($Paragraph, "Text", 0)</Expression>
+  <Expression>$Text.value = "Favorite Links"</Expression>
+  <Expression>$Text.bold = true</Expression>
+  <Comment text="Set font size to 10" />
+  <Expression>$Paragraph.fontSize = 12</Expression>
+</Macro>
